@@ -100,17 +100,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ruleta" />
@@ -130,6 +119,9 @@
       <workItem from="1610987067642" duration="121000" />
       <workItem from="1610989232044" duration="4000" />
       <workItem from="1610991253763" duration="4663000" />
+      <workItem from="1610997388366" duration="358000" />
+      <workItem from="1611007624016" duration="451000" />
+      <workItem from="1611016511837" duration="3005000" />
     </task>
     <servers />
   </component>

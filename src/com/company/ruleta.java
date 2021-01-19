@@ -15,6 +15,8 @@ public class ruleta {
         int clientesTotal=0;
         float dineroClientes[];
         int contadorDias=1;//Para ir sumandole uno cada vez que pase un día
+        int numAleatorio;
+        String tipoDeApuesta[];
 
         try{
             //PREGUNTAMOS DE CUÁNTOS DÍAS SE QUIERE OBTENER EL ESTUDIO
@@ -38,17 +40,42 @@ public class ruleta {
                 }
                 System.out.println();
 
-                //VAMOS A ESTABLECER EL DINERO QUE VA A TENER CADA CLIENTE
-                dineroClientes=new float[clientesTotal];
-                for(int i=0;i<clientesTotal;i++){
-                    dineroClientes[i]=(int) (Math.random()*50+51);
-                }
-
-
                 // LA RULETA SACA UN NÚMERO RANDOM DEL 1-36
                 numeroRuleta = (int) (Math.random() * 37);
                 System.out.println("LA RULETA HA SACADO [" + numeroRuleta + "]");
 
+                //VAMOS A ESTABLECER EL DINERO QUE VA A TENER CADA CLIENTE
+                dineroClientes=new float[clientesTotal];
+                tipoDeApuesta=new String[clientesTotal];
+                for(int i=0;i<clientesTotal;i++){
+                    dineroClientes[i]=(float) (Math.random()*50+51);
+
+                    //REALIZAMOS EL SISTEMA DE APUESTAS(color, pares, número, 1-18, docena,columna)
+                    numAleatorio = (int) (Math.random() * 101 + 1);//generamos un núemero aleatorio para poder jugar con las probabiidades
+
+                    /* **NOTA** Creo que se puede hacer metiendo directamente el dinero que ha perdido/ganado el jugador,
+                    guardandolo en el array del dinero(ten en cuenta que cuando ganas al 50% se multiplica por 2 el dinero que tienes y cuando ganas a 1/3 ps
+                    no se pongamos 1,5? O menos ns de eso te encargas tú ), después de eso quedaría meter toda la ruleta en un bucle que solo funciona si hay
+                    menos de 10 jugadas o algún jugador se ha quedado sin un puto duro (POR LUDÓPATAS), y creo que ya estaría. Solo quedaría optimizarlo
+                    y meterle paja.
+
+                    Tengo muchas ganas de verte UWUWUWUWUWUWUWUWUWWU*/
+
+                    if (numAleatorio >= 1 && numAleatorio <= 25) {//color
+                        tipoDeApuesta[i]="color";
+                    } else if (numAleatorio > 25 && numAleatorio <= 50) {//pares
+                        tipoDeApuesta[i]="pares";
+                    } else if (numAleatorio > 50 && numAleatorio <= 65) {//docena
+                        tipoDeApuesta[i]="docena";
+                    } else if (numAleatorio > 65 && numAleatorio <= 75) {//columna
+                        tipoDeApuesta[i]="columna";
+                    } else if (numAleatorio > 75 && numAleatorio < 95) {//1-18
+                        tipoDeApuesta[i]="1-18";
+                    } else {
+                        tipoDeApuesta[i]="número";//número
+                    }
+
+                }
 
                 //INDICAMOS QUE EL DÍA HA ACABADO
                 System.out.println("----------FIN DEL DÍA----------");
