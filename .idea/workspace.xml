@@ -80,7 +80,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ruleta" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.ruleta">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -89,6 +89,26 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fichero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ejemplosmetodos.fichero" />
+      <module name="RuletaEnUnaCamioneta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ejemplosmetodos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pruebas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pruebas" />
+      <module name="RuletaEnUnaCamioneta" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +123,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ruleta" />
+        <item itemvalue="Application.fichero" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.pruebas" />
       </list>
     </recent_temporary>
   </component>
@@ -122,6 +144,16 @@
       <workItem from="1610997388366" duration="358000" />
       <workItem from="1611007624016" duration="451000" />
       <workItem from="1611016511837" duration="3005000" />
+      <workItem from="1611058682289" duration="2371000" />
+      <workItem from="1611061073601" duration="2347000" />
+      <workItem from="1611063768008" duration="243000" />
+      <workItem from="1611064165137" duration="64000" />
+      <workItem from="1611152082692" duration="8000" />
+      <workItem from="1611232263160" duration="104000" />
+      <workItem from="1611236072803" duration="6910000" />
+      <workItem from="1611249805954" duration="2362000" />
+      <workItem from="1611260215604" duration="1209000" />
+      <workItem from="1611265908036" duration="1182000" />
     </task>
     <servers />
   </component>
