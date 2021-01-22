@@ -19,6 +19,8 @@ public class ruleta {
         int contadorFallos=0;
         int rondas=0;
         float dineroTotalClientes=0;
+        int numAleatorio;
+        int apuestaCliente;
 
         try{
             //PREGUNTAMOS DE CUÁNTOS DÍAS SE QUIERE OBTENER EL ESTUDIO
@@ -52,43 +54,49 @@ public class ruleta {
                 }
 
                 //REALIZAMOS EL SISTEMA DE APUESTAS(color, pares, número, 1-18, docena,columna)
-                while(rondas<=5&&dineroTotalClientes>0) {
+                while(rondas<=5 && dineroTotalClientes>0) {
                     System.out.println("RONDA NÚMERO "+rondas);
 
                     // LA RULETA SACA UN NÚMERO RANDOM DEL 1-36
                     numeroRuleta = (int) (Math.random() * 37);
                     System.out.println("LA RULETA HA SACADO [" + numeroRuleta + "]");
 
-                    for (int i = 0; i < clientesTotal; i++) {
-                        int numAleatorio = (int) (Math.random() * 100 + 1);//generamos un núemero aleatorio para poder jugar con las probabiidades
-                        int apuestaCliente = (int) (Math.random()) * 80 + 21;//generamos un número aleatorio que será el porcentaje de dinero que apostará el cliente
+                    for (int i = 0; i < clientesTotal; i++) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                        numAleatorio = (int) (Math.random() * 100 + 1);//generamos un núemero aleatorio para poder jugar con las probabiidades
+                        apuestaCliente = (int) (Math.random()) * 80 + 21;//generamos un número aleatorio que será el porcentaje de dinero que apostará el cliente
 
                         if (numAleatorio >= 1 && numAleatorio <= 25) {//color
                             tipoDeApuesta = (int) (Math.random() * 2+1);
+
                             if(numeroRuleta==1&&numeroRuleta==3&&numeroRuleta==5&&numeroRuleta==7&&numeroRuleta==9&&numeroRuleta==12&&numeroRuleta==14&&numeroRuleta==16&&numeroRuleta==18&&numeroRuleta==19&&numeroRuleta==21&&numeroRuleta==25&&numeroRuleta==27&&numeroRuleta==30&&numeroRuleta==34&&numeroRuleta==36){
                                 if(tipoDeApuesta==1){
                                     dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 2);
+                                    System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                                 }else{
                                     dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                    System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                                 }
                             }
                             else{
                                 if(tipoDeApuesta==2){
                                     dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 2);
+                                    System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                                 }else{
                                     dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                    System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                                 }
                             }
-
-
 
                         } else if (numAleatorio > 25 && numAleatorio <= 50) {//pares
                             tipoDeApuesta = (int) (Math.random() * 2 + 1);//1 es par y 2 es impar
                             int nPar = (numeroRuleta % 2) + 1;
+
                             if (nPar == tipoDeApuesta) {
                                 dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 2);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             } else {
                                 dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             }
 
                         } else if (numAleatorio > 50 && numAleatorio <= 65) {//docena
@@ -97,8 +105,10 @@ public class ruleta {
 
                             if (nDocena == tipoDeApuesta) {
                                 dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 3);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             } else {
                                 dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             }
 
                         } else if (numAleatorio > 65 && numAleatorio <= 75) {//columna
@@ -107,8 +117,10 @@ public class ruleta {
 
                             if (nColumna == tipoDeApuesta) {
                                 dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 3);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             } else {
                                 dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             }
 
                         } else if (numAleatorio > 75 && numAleatorio < 95) {//1-18
@@ -117,23 +129,27 @@ public class ruleta {
 
                             if (nMitad == tipoDeApuesta) {
                                 dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 2);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             } else {
                                 dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             }
 
                         } else {//número
                             tipoDeApuesta = (int) (Math.random() * 37);
                             if (numeroRuleta == tipoDeApuesta) {
                                 dineroClientes[i] = dineroClientes[i] + (((dineroClientes[i] * apuestaCliente) / 100) * 36);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             } else {
                                 dineroClientes[i] = dineroClientes[i] - ((dineroClientes[i] * apuestaCliente) / 100);
+                                System.out.println("El cliente ahora tiene "+dineroClientes[i]);
                             }
                         }
                        dineroTotalClientes=dineroTotalClientes+dineroClientes[i];
                     }
                     rondas++;
                 }
-
+                rondas=0;
                 //INDICAMOS QUE EL DÍA HA ACABADO
                 System.out.println("----------FIN DEL DÍA----------");
                 System.out.println();
